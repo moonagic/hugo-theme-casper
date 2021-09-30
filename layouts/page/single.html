@@ -57,15 +57,15 @@
         {{ $currentNode := . }}
         {{ range .Site.Menus.main }}
         {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .)}}
-        <li><a href="{{.Permalink}}">{{.Name}}</a></li>
+        <li><a href="{{.URL}}">{{.Name}}</a></li>
               {{ range .Children }}
               {{ if .HasChildren }}
               {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .)}}
-                <li><a href="{{.Permalink}}">{{.Name}}</a></li>
+                <li><a href="{{.URL}}">{{.Name}}</a></li>
                   {{ range .Children }}
                   {{ if .HasChildren }}
                   {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .)}}
-                    <li><a href="{{.Permalink}}">{{.Name}}</a></li>
+                    <li><a href="{{.URL}}">{{.Name}}</a></li>
                   {{end}}
                   {{end}}
                   {{end}}
