@@ -307,10 +307,6 @@ a {
     transition: color 0.3s ease;
 }
 
-a:-webkit-any-link {
-    color: #00BFFF;
-}
-
 a:hover {
     color: #111;
 }
@@ -538,8 +534,7 @@ margin on the iframe, cause it breaks stuff. */
 /* Creates a responsive wrapper that makes our content scale nicely */
 .inner {
     position: relative;
-    width: 80%;
-    max-width: 710px;
+    max-width: 80%;
     margin: 0 auto;
 }
 

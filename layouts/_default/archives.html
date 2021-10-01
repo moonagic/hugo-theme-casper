@@ -22,50 +22,22 @@
           {{end}}
         </nav>
       </header>
-
-
-
       <main class="content" role="main">
+        <div class="inner">
+          {{ range (.Site.RegularPages.GroupByDate "2006") }}
+          <h3>{{ .Key }}</h3>
 
-
-
-
-        <article class="post {{ .Section }}">
-
-          <header class="post-header">
-            <h1 class="post-title">{{.Title}}</h1>
-            <small>{{.Description}}</small>
-
-            <section class="post-meta">
-              {{ if eq .Section "post"}}
-              <time class="post-date" datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" | safeHTML }}">
-                {{ .Date.Format "Jan 2, 2006" }}
-              </time>
-              {{end}}
-              {{ range .Params.tags }}
-              <span class="post-tag small"><a style="color: red;" href="{{$.Site.BaseURL}}/tags/{{ . | urlize }}/">#{{ .
-                  }}</a></span>
-              {{ end }}
-            </section>
-          </header>
-
-          <section class="post-content">
-            {{ .Content }}
-          </section>
-
-
-          <footer class="post-footer">
-
-
-            {{ partial "author.html" . }}
-
-            {{ partial "share.html" . }}
-
-            {{ partial "disqus.html" . }}
-
-          </footer>
-        </article>
-
+          <ul class="archive-list">
+            {{ range (where .Pages "Type" "post") }}
+            <li style="font-family: Monaco, monospace;" >
+              {{ .PublishDate.Format "02 Jan" }}
+              -
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
       </main>
 
       {{if not .Params.hideSuggestions }}
