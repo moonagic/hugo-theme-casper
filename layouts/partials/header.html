@@ -33,7 +33,7 @@
   <meta property="og:description" content="{{ .Site.Params.description }}" />
   {{ end }}
 
-  <title>{{ if ne .Permalink "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
+  <title>{{ if ne .Permalink "/" }}{{ .Title }}{{ end }}</title>
 
   {{ if .IsPage }}
   <meta name="description" content="{{ .Description | default (substr .Summary 0 160) }}" />
