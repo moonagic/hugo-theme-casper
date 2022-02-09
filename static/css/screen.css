@@ -405,7 +405,7 @@ section {
 }
 
 code, tt {
-    font-family: Monaco, Inconsolata, monospace, sans-serif;
+    font-family: 'PT Mono', Monaco, Inconsolata, monospace;
     white-space: pre-wrap;
     border: #E3EDF3 0px solid;
     background: #00bfff;
@@ -424,7 +424,7 @@ pre {
     border: #E3EDF3 0px solid;
     width: 100%;
     /*padding: 10px;*/
-    font-family: Monaco, Inconsolata, monospace, sans-serif;
+    font-family: 'PT Mono', Monaco, Inconsolata, monospace;
     font-size: 0.9em;
     white-space: pre;
     overflow: auto;
